@@ -1,0 +1,45 @@
+/*
+	Theme Name:     Textron Child
+	Theme URI:      http://enovathemes.com/textron
+	Description:    Industrial WordPress Theme
+	Author:         Enovathemes
+	Author URI:     https://enovathemes.com
+	Version:        1.0
+	Template:       textron
+*/
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+/*Cambio color idioma en wpml en header*/
+.wpml-ls-native,
+.icl_lang_sel_native {
+    color: #ffffff !important;
+}
+
+
+
+
+
+/* BANDERA*/
+.wpml-ls-flag.iclflag {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+
+
+/*banderas en linea*/
+.inline-container {
+  display: inline;
+}
+
+.icl-gl,
+.wpml-ls-slot-shortcode_actions,
+.wpml-ls-item,
+.wpml-ls-item-gl,
+.wpml-ls-last-item,
+.wpml-ls-item-legacy-list-horizontal {
+  display: inline;
+}
