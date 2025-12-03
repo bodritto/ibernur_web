@@ -1132,6 +1132,20 @@
 			padding: 48px 72px 56px 72px;
 		}
 
+		@media (max-width: 767px) {
+			.et-animate-box-599331 .content {
+				padding: 24px 16px 24px 16px;
+			}
+
+			#et-animate-box-599331 {
+				background-color: #ffffff;
+			}
+
+			#et-animate-box-599331 svg.box-back {
+				display: none;
+			}
+		}
+
 		#et-icon-box-193154 {
 			background-color: #1c203f;
 		}
@@ -4328,6 +4342,15 @@
 			background-color: #00245a !important;
 		}
 
+		@media (max-width: 767px) {
+			.vc_custom_1747902271284 {
+				display: none !important;
+				padding-top: 0 !important;
+				padding-bottom: 0 !important;
+				background-color: transparent !important;
+			}
+		}
+
 		.vc_custom_1747923228837 {
 			padding-top: 48px !important;
 			padding-bottom: 48px !important;
@@ -4546,6 +4569,34 @@
 				max-height: 50px !important;
 			}
 
+			.custom-header-inner {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+				gap: 16px;
+			}
+
+			.header-col {
+				flex: 1;
+				display: flex;
+				align-items: center;
+			}
+
+			.header-col-lang {
+				justify-content: flex-start;
+			}
+
+			.header-col-logo {
+				justify-content: center;
+			}
+
+			.header-col-cta {
+				justify-content: flex-end;
+			}
+
 			.header-actions {
 				display: flex;
 				align-items: center;
@@ -4593,6 +4644,26 @@
 				border: none;
 			}
 
+			@media (max-width: 768px) {
+				.custom-header {
+					padding: 10px 16px;
+				}
+
+				.custom-header-inner {
+					gap: 8px;
+				}
+
+				.btn {
+					padding: 10px 18px;
+					font-size: 13px;
+				}
+
+				.lang-select {
+					padding: 8px 28px 8px 12px;
+					font-size: 13px;
+				}
+			}
+
 			body {
 				margin: 0 !important;
 				padding-top: 80px !important;
@@ -4603,17 +4674,23 @@
 				display: none !important;
 			}
 		</style>
-		<img alt="IberNoor energia" src="../wp-content/uploads/logo_actualizado.png" data-i18n="header.logoAlt"
-			data-i18n-attr="alt" />
-		<div class="header-actions">
-			<div class="lang-switcher" aria-label="Language selector">
-				<select id="langSelect" class="lang-select">
-					<option value="ar">العربية</option>
-					<option value="es">Español</option>
-				</select>
+		<div class="custom-header-inner">
+			<div class="header-col header-col-lang">
+				<div class="lang-switcher" aria-label="Language selector">
+					<select id="langSelect" class="lang-select">
+						<option value="ar">العربية</option>
+						<option value="es">Español</option>
+					</select>
+				</div>
 			</div>
-			<a class="btn" href="https://contratar.maisenerxia.com/" data-i18n="header.cta"
-				data-open-lead-popup="1">Contratar</a>
+			<div class="header-col header-col-logo">
+				<img alt="IberNoor energia" src="../wp-content/uploads/logo_actualizado.png" data-i18n="header.logoAlt"
+					data-i18n-attr="alt" />
+			</div>
+			<div class="header-col header-col-cta">
+				<a class="btn" href="https://contratar.maisenerxia.com/" data-i18n="header.cta"
+					data-open-lead-popup="1">Contratar</a>
+			</div>
 		</div>
 	</header>
 	<div class="mobmenu-push-wrap">
@@ -6231,14 +6308,7 @@
 		<!-- Cloudflare Insights beacon removed -->
 	</div>
 	<div class="mobmenu-overlay"></div>
-	<div class="mob-menu-header-holder mobmenu" data-close-icon="up-open" data-menu-display="mob-menu-slideout"
-		data-open-icon="down-open">
-		<div class="mobmenul-container"><a aria-label="Left Menu Button" class="mobmenu-left-bt mobmenu-trigger-action"
-				data-panel-target="mobmenu-left-panel" href="#"><i class="mob-icon-menu mob-menu-icon"></i><i
-					class="mob-icon-cancel-1 mob-cancel-button"></i></a></div>
-		<div class="mob-menu-logo-holder"><a class="headertext" href="index.html"></a></div>
-		<div class="mobmenur-container"></div>
-	</div>
+
 	<div class="mobmenu-left-alignment mobmenu-panel mobmenu-left-panel">
 		<a aria-label="Left Menu Button" class="mobmenu-left-bt" href="#"><i
 				class="mob-icon-cancel-1 mob-cancel-button"></i></a>
