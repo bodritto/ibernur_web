@@ -17,6 +17,23 @@
 	<link href="index.html" hreflang="es" rel="alternate" />
 	<link href="../index.html" hreflang="x-default" rel="alternate" />
 	<!-- tracking scripts from original site removed -->
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NRF9XV22');
+	</script>
+	<!-- End Google Tag Manager -->
 	<!-- Optimización para motores de búsqueda de Rank Math -  https://rankmath.com/ -->
 	<title>Compañía de luz. Iluminando O Noso - Nur Enerxia Galega</title>
 	<meta
@@ -4542,6 +4559,10 @@
 <body
 	class="home wp-singular page-template page-template-page-vc page-template-page-vc-php page page-id-18 wp-embed-responsive wp-theme-textron wp-child-theme-textron-child addon-active enovathemes layout-wide mob-menu-slideout wpb-js-composer js-comp-ver-8.7.2 vc_responsive cmplz-functional cmplz-eu cmplz-optin"
 	data-cmplz="1">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRF9XV22" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	<header class="custom-header">
 		<style>
 			.custom-header {
@@ -6416,28 +6437,28 @@
     border-radius:10px; 
     font-family:Arial;
   ">
-			<h2 style="text-align:center;" data-i18n="popup.title">Déjanos tus datos</h2>
+			<iframe data-tally-src="https://tally.so/embed/LZDx4O?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+				loading="lazy" width="100%" height="387" frameborder="0" marginheight="0" marginwidth="0"
+				title="IberNur arabic"></iframe>
 
-			<form id="leadForm">
-				<label data-i18n="popup.name">Nombre:</label>
-				<input type="text" id="name" required style="width:100%; padding:8px; margin-bottom:10px;">
-
-				<label data-i18n="popup.email">Email:</label>
-				<input type="email" id="email" required style="width:100%; padding:8px; margin-bottom:10px;">
-
-				<label data-i18n="popup.phone">Teléfono:</label>
-				<input type="tel" id="phone" required style="width:100%; padding:8px; margin-bottom:10px;">
-
-				<label data-i18n="popup.postalCode">Código Postal:</label>
-				<input type="text" id="postalCode" required style="width:100%; padding:8px; margin-bottom:20px;">
-
-				<button type="submit" style="
-        width:100%; padding:12px;
-        background:#d0674e; color:white;
-        border:none; border-radius:6px;
-        font-size:16px;
-      " data-i18n="popup.submit">Continuar</button>
-			</form>
+			<script>
+				var d = document,
+					w = "https://tally.so/widgets/embed.js",
+					v = function () {
+						if (typeof Tally != "undefined") {
+							Tally.loadEmbeds();
+						} else {
+							d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+								e.src = e.dataset.tallySrc;
+							});
+						}
+					};
+				if (typeof Tally != "undefined") v();
+				else if (d.querySelector('script[src="' + w + '"]') == null) {
+					var s = d.createElement("script");
+					s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s);
+				}
+			</script>
 
 		</div>
 	</div>
@@ -6828,6 +6849,28 @@
 		});
 	</script>
 	<!-- Additional DOM cleanup scripts (tabs cleanup, chat buttons) removed to keep only popup logic -->
+
+	<script>
+		// Push custom event to GTM when lead forms are submitted
+		window.dataLayer = window.dataLayer || [];
+		document.addEventListener("DOMContentLoaded", function () {
+			try {
+				// Forminator popup and inline forms (ID 5883)
+				var forminatorForms = document.querySelectorAll("form.forminator-custom-form-5883, form.forminator-custom-form.forminator-custom-form-5883");
+				forminatorForms.forEach(function (form) {
+					form.addEventListener("submit", function () {
+						window.dataLayer.push({
+							event: "ibernur_form_filled",
+							formProvider: "forminator",
+							formId: "5883"
+						});
+					});
+				});
+			} catch (e) {
+				// Fail silently if anything goes wrong
+			}
+		});
+	</script>
 
 </body>
 
