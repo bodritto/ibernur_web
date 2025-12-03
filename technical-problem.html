@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lo sentimos - Problema técnico</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: #0d162d;
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+      }
+
+      .wrapper {
+        max-width: 640px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        opacity: 0.9;
+      }
+
+      .lang-switcher {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+
+      .lang-switcher span {
+        color: #9ca3af;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        padding: 4px 10px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #e5e7eb;
+        font-family: inherit;
+      }
+
+      .lang-btn.active {
+        border-color: #f59e0b;
+        color: #fbbf24;
+      }
+
+      .lang-btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="lang-switcher" aria-label="Language selector">
+        <button type="button" class="lang-btn" data-lang="ar">العربية</button>
+        <span>|</span>
+        <button type="button" class="lang-btn" data-lang="es">Español</button>
+      </div>
+      <h1 data-i18n="error.title">Lo sentimos</h1>
+      <p data-i18n="error.message">
+        Hay un problema técnico. Lo solucionaremos pronto.
+      </p>
+    </div>
+
+    <script>
+      const ERROR_I18N = {
+        "error.title": {
+          es: "Lo sentimos",
+          ar: "نعتذر"
+        },
+        "error.message": {
+          es: "Hay un problema técnico. Lo solucionaremos pronto.",
+          ar: "هناك مشكلة تقنية. سنقوم بحلها قريبًا."
+        }
+      };
+
+      function applyErrorTranslations(lang) {
+        const targetLang = lang === "ar" ? "ar" : "es";
+        document.documentElement.lang = targetLang === "ar" ? "ar" : "es";
+        document.documentElement.dir = targetLang === "ar" ? "rtl" : "ltr";
+
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const dict = ERROR_I18N[key];
+          if (!dict) return;
+          const value = dict[targetLang] || dict.es;
+          el.textContent = value;
+        });
+      }
+
+      function setErrorLanguage(lang) {
+        const targetLang = lang === "ar" ? "ar" : "es";
+        localStorage.setItem("siteLang", targetLang);
+        applyErrorTranslations(targetLang);
+
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.lang === targetLang);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const saved = localStorage.getItem("siteLang") || "ar";
+        setErrorLanguage(saved);
+
+        document.querySelectorAll(".lang-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const lang = btn.dataset.lang;
+            if (!lang) return;
+            setErrorLanguage(lang);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+

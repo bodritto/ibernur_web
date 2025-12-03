@@ -5070,6 +5070,10 @@
 	    text-transform: uppercase;
 	}
 
+
+	.et-accordion .toggle-title {
+		font-size: 18px;
+	}
 	.product-category .post-title {
 		font-size: 11px !important;
 		line-height: 20px !important;
