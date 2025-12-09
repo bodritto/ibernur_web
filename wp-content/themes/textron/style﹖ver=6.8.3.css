@@ -105,7 +105,7 @@
 
 	html{
 		position:static;
-		overflow-y:scroll;
+		overflow-y:auto;
 		overflow-x:hidden;
 		font-family:Arial, Helvetica, sans-serif;
 		-webkit-font-smoothing:antialiased;
